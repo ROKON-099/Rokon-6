@@ -1,81 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Plant </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree Plant</title>
     <!--tailwind css +++ daisyui installation-->
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5"rel="stylesheet type="text/css"/> 
-</head>
-            <style>
-            body{
-                background-color:#f0fdf4;
-            }
-            
-            </style>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5"rel="stylesheet
+    type="text/css"/>
+  </head>
+  <style>
+    body {
+      background-color: #f0fdf4;
+    }
+  </style>
 
- <body>
-<header class="bg-[#15803D] text-white px-6 py-4 flex 
-         flex-col md:flex-row md:items-center md:justify-between flex-wrap">
+  <body>
+    <header
+      class="bg-[#15803D] text-white px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between flex-wrap"
+    >
+                        <!-- navigation ber -->
 
-              <!-- navigation ber -->
+      <div
+        class="flex items-center justify-center md:justify-start gap-[12px] mb-[1rem] md:mb-0 w-full md:w-auto"
+      >
+        <span class="text-2xl font-bold text-white">Green Earth</span>
+      </div>
+      <nav
+        class="flex flex-wrap justify-center gap-[1.5rem] text-lg mb-[1rem] md:mb-0 md:flex-1"
+      >
+        <a href="#" class="hover:text-[#fdc700] transition"> About</a>
+        <a href="#" class="hover:text-[#fdc700] transition">Gallery</a>
+        <a href="#" class="hover:text-[#fdc700] transition">Plant a Tree</a>
+      </nav>
 
-    <div class="flex items-center justify-center 
-    md:justify-start gap-[12px] mb-[1rem] md:mb-0 w-full md:w-auto">
-     
-    <span class="text-2xl font-bold text-white">Green Earth</span>
+      <div class="flex justify-center md:justify-end w-full md:w-auto">
+        <a
+          href="#"
+          class="bg-[#FACC15] text-[#2bb55d] font-semibold px-4 py-2 rounded-lg hover:bg-gray-300 transition"
+          >Plant a Tree</a
+        >
+      </div>
+   
+    </header>
+                         <!--middle section left+++ right leaf pata-->
+  
+    <div class="h-[15rem] bg-green-100 rounded-md px-6 py-4 flex flex-col md:flex-row items-center 
+    justify-between flex-wrap relative">
+                      <!--left leaf++++++++++image icon -->
+    <img src="hero-leaf1.png" alt="Leaf 1" class="hidden md:block h-[14rem] w-auto rotate-[1.5deg] self-end" />
+
+                
+
+    <div class="text-center flex-1 px-4">
+        <h1 class="lg:text-3xl text-2xl font-bold text-[#1F2937] whitespace-nowrap">
+            Plant a Tree, Grow a Future
+        </h1>
+        <p class="text-xs mt-1 text-green-700 leading-snug">
+            Join our mission to plant 1 million trees and make the Earth
+            greener<br />
+            for future generations.
+        </p>
+
+        <button class="bg-[#FACC15] mt-4 text-[#2bb55d] font-semibold py-2 px-4 rounded-xl hover:bg-gray-300">
+            Get Involved
+        </button>
     </div>
-    <nav class="flex flex-wrap justify-center 
-     gap-[1.5rem] text-lg mb-[1rem] md:mb-0 md:flex-1">
-    <a href="#"  class="hover:text-[#fdc700]  transition"> About</a>
-    <a href="#" class="hover:text-[#fdc700]  transition">Gallery</a>
-     <a href="#" class="hover:text-[#fdc700] transition">Plant a Tree</a>
-    </nav>
 
-       <div class="flex justify-center md:justify-end w-full md:w-auto">
-       <a href="#" class="bg-[#FACC15] text-[#2bb55d] font-semibold px-4 
-        py-2 rounded-lg hover:bg-gray-300 transition">Plant a Tree</a>
-        </div>
+                       <!-- rigth++++++++++ immage png -->
+
+     <img src="hero-leaf2.png" alt="leaf right " class="hidden md:block h-[14rem] w-auto -rotate-[1.5deg] self-end" />
+ </div>
+                         <!--main++++section+++header+++ber+++++-->
+          
+    <h2 class="text-center text-black-1000 text-2xl mt-[2.5rem] font-semibold">
+      Choose your Trees
+    </h2>
+                             <!--++++main++section++++++--
+                             API handling-->
 
       
- </header>
+<div class="flex flex-col md:flex-row gap-6 p-6 bg-[#f0fdf4] rounded-xl">
 
-     <div
-  class="h-[15rem] bg-green-100 rounded-md px-6 py-4 flex flex-col md:flex-row items-center justify-between flex-wrap relative"
->
-  <!-- Left Leaf Image -->
-  <img
-    src="hero-leaf1.png"
-    alt="Leaf 1"
-    class="hidden md:block h-[14rem] w-auto rotate-[1.5deg] self-end"
-  />
+  <!--  Sidebar: Categories -->
+  <aside class="w-full md:w-1/4 bg-white p-4 rounded-xl shadow">
+    <h2 class="text-lg font-semibold text-green-700 mb-4">Categories</h2>
+    <ul class=" space-y-2 text-green-800">
+      <li><button data-category="All trees"class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">All Trees</button></li>
+      
+      <li><button data-category="Fruit Tree" class="hover:underline">Fruit Trees</button></li>
+      <li><button data-category="Flowering Tree" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Flowering Trees</button></li>
+      <li><button data-category="Shade Tree" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Shade Trees</button></li>
+      <li><button data-category="Medicinal Tree" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Medicinal Tree</button></li>
+      <li><button data-category="Timber Tree" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Timber Trees</button></li>
+      <li><button data-category="Evergreen Tree" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Evergreen Trees</button></li>
+      <li><button data-category="Ornamental Plant" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Ornamental Plants</button></li>
+      <li><button data-category="Bamboo" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Bamboo</button></li>
+      <li><button data-category="Climber" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Climbers</button></li>
+      <li><button data-category="Aquatic Plant" class="w-auto px-4 rounded-sm hover:bg-green-700 hover:text-white">Aquatic Plants</button></li>
+    </ul>
+  </aside>
 
-  <!-- Center Text & Button -->
-  <div class="text-center flex-1 px-4">
-    <h1 class="lg:text-3xl text-2xl font-bold text-[#1F2937] whitespace-nowrap">
-      Plant a Tree, Grow a Future
-    </h1>
-    <p class="text-xs mt-1 text-green-700 leading-snug">
-      Join our mission to plant 1 million trees and make the Earth greener<br />
-      for future generations.
-    </p>
+  <!-- 🌳 Main: Tree Cards -->
+  <main class="w-full md:w-2/4">
+    <div id="plants-container" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
+      <!-- Cards injected by JS -->
+    </div>
+  </main>
 
-    <button
-      class="bg-[#FACC15] mt-4 text-[#2bb55d] font-semibold py-2 px-4 rounded-xl hover:bg-gray-300 ">
-    >
-      Get Involved
-    </button>
-  </div>
-
-  <!-- Right Leaf Image -->
-  <img
-    src="hero-leaf2.png"
-    alt="Leaf 2"
-    class="hidden md:block h-[14rem] w-auto -rotate-[1.5deg] self-end"
-  />
+  <!-- 🛒 Sidebar: Cart -->
+  <aside id="cart" class="w-full md:w-1/4 bg-white p-4 rounded-xl shadow">
+    <h2 class="text-lg font-semibold text-green-700 mb-4">Your Cart</h2>
+    <ul id="cart-items" class="text-green-800 space-y-2"></ul>
+    <div id="cart-total" class="mt-4 font-bold text-green-900">Total: ৳0</div>
+  </aside>
 </div>
 
 
-</body>
+
+ <script src="index.js"></script>
+  </body>
 </html>
