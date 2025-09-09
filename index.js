@@ -14,18 +14,22 @@ function loadPlants(plants) {
     card.className = 'bg-white rounded-lg shadow p-4 flex flex-col items-center';
 
     card.innerHTML = `
-      <img src="${plant.image}" alt="${plant.name}" class="w-full h-48 object-cover mb-2 rounded">
+      <img src="${plant.image || 'https://via.placeholder.com/150'}" alt="${plant.name}" class="w-full h-48 object-cover mb-2 rounded">
       <h3 class="font-semibold text-lg">${plant.name}</h3>
+      <p class="text-xs text-gray-500 mb-3 line-clamp-3">
+        ${plant.description || 'No description available'}
+      </p>
       <p class="text-sm text-gray-600">${plant.category || ''}</p>
       <button class="mt-2 px-3 py-1 bg-green-600 text-white rounded add-to-cart">Add to Cart</button>
     `;
 
     // Add to cart button
-    card.querySelector('.add-to-cart').addEventListener('click', () => {
+    card.querySelector('.add-to-cart').addEventListener('click', (e) => {
+      e.stopPropagation();
       addToCart(plant);
     });
 
-    // Optional: Show modal on card click
+    // Show modal on card click (not on button click)
     card.addEventListener('click', (e) => {
       if (!e.target.classList.contains('add-to-cart')) {
         openModal(plant);
@@ -127,10 +131,10 @@ function openModal(plant) {
   }
   const modalContent = modal.querySelector('#modal-content');
   modalContent.innerHTML = `
-    <img src="${plant.image}" alt="${plant.name}" class="w-full h-60 object-cover rounded-lg mb-3">
+    <img src="${plant.image || 'https://via.placeholder.com/150'}" alt="${plant.name}" class="w-full h-60 object-cover rounded-lg mb-3">
     <h2 class="text-xl font-bold mb-2">${plant.name}</h2>
     <p class="text-gray-600 mb-2"><strong>Category:</strong> ${plant.category}</p>
-    <p class="text-gray-600 mb-2"><strong>Price:</strong> ৳${plant.price}</p>
+    <p class="text-gray-600 mb-2"><strong>Price:</strong> ৳${plant.price || 'N/A'}</p>
     <p class="text-gray-500 mb-2">${plant.description || 'No description available'}</p>
   `;
   modal.classList.remove('hidden');
